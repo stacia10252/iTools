@@ -1,0 +1,30 @@
+﻿@model iTools.ViewModels.Home.BMIViewModel
+
+@using (Html.BeginForm("BMI", "Home"))
+{
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">BMI計算器</div>
+            <div class="card-body">
+
+                <div class="form-group">
+                    <div class="form-label-group">
+                        @Html.TextBoxFor(m => m.Height, new { @type = "text", @class = "form-control", @placeholder = "身高", @required = "required", @autofocus = "autofocus" })
+                        <label for="Height">身高</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-label-group">
+                        @Html.TextBoxFor(m => m.Weight, new { @type = "text", @class = "form-control", @placeholder = "體重", @required = "required", @autofocus = "autofocus" })
+                        <label for="Weight">體重</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">計算BMI</button>
+
+                <div class="text-center">
+                    <h5 class="d-block mt-3">BMI：@Model.BMI</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+}
